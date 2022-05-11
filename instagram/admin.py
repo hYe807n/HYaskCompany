@@ -1,4 +1,5 @@
 from csv import list_dialects
+from xml.etree.ElementTree import Comment
 from django.contrib import admin
 from jmespath import search
 from .models import Post
@@ -21,3 +22,7 @@ class PostAdmin(admin.ModelAdmin):
 #admin.site.register(Post, PostAdmin)
     def message_length(self, post):
         return " 글자"
+
+@admin.register(Comment)
+class CommentAdmin(admin.ModelAdmin):
+    pass
